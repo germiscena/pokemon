@@ -1,0 +1,32 @@
+.bottomButtons {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  right: 100px;
+
+  &_button {
+    background-color: rgb(0, 166, 255);
+    border: 0px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px 7px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(80, 162, 207);
+    }
+  }
+}
+.active {
+  background-color: red;
+}
+.active:hover {
+  background-color: rgb(168, 19, 19);
+}

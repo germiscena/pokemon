@@ -1,0 +1,13 @@
+.battlePage {
+  background-image: url('../images/background.png');
+  height: 721px;
+  min-width: 100vw;
+  padding: 0px 10px;
+  z-index: -2;
+
+  &_windows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
