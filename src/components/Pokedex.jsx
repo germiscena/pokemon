@@ -13,7 +13,7 @@ import venosaurEvo from '../images/venosaur.gif';
 import ivisaurEvo from '../images/ivisaur.gif';
 import evoArrow from '../images/evoArrow.svg';
 
-const Pokedex = () => {
+const Pokedex = ({ setOpen }) => {
   return (
     <div className='pokedex'>
       <div className='pokedex_find'>
@@ -68,7 +68,9 @@ const Pokedex = () => {
           </div>
         </div>
       </div>
-      <button className='pokedex_close'>✖</button>
+      <button onClick={() => setOpen()} className='pokedex_close'>
+        ✖
+      </button>
     </div>
   );
 };

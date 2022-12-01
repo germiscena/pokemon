@@ -2,23 +2,47 @@ import React from 'react';
 import './App.css';
 import BattlePage from './pages/BattlePage';
 import Loading from './pages/Loading';
+import { Route, Routes } from 'react-router-dom';
+import Welcome from './pages/Welcome';
+import Pokeheal from './pages/Pokeheal';
 
 function App() {
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [time, setTime] = React.useState();
-  setInterval(function () {
-    setTime(new Date().toLocaleTimeString());
-  }, 1000);
+  const [openPokedex, setOpenPokedex] = React.useState(false);
 
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-  }, []);
   return (
-    <div>
-      {isLoading ? <Loading isLoading={isLoading} time={2000} /> : <BattlePage time={time} />}
-    </div>
+    <Routes>
+      <Route
+        path='/Тренировка'
+        element={
+          <BattlePage
+            openPokedex={openPokedex}
+            setOpenPokedex={() => setOpenPokedex(true)}
+            setClosePokedex={() => setOpenPokedex(false)}
+          />
+        }
+      />
+      <Route path='/' element={<Loading />} />
+      <Route
+        path='/Академия'
+        element={
+          <Welcome
+            openPokedex={openPokedex}
+            setOpenPokedex={() => setOpenPokedex(true)}
+            setClosePokedex={() => setOpenPokedex(false)}
+          />
+        }
+      />
+      <Route
+        path='/Покецентр'
+        element={
+          <Pokeheal
+            openPokedex={openPokedex}
+            setOpenPokedex={() => setOpenPokedex(true)}
+            setClosePokedex={() => setOpenPokedex(false)}
+          />
+        }
+      />
+    </Routes>
   );
 }
 

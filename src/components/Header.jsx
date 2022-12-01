@@ -13,7 +13,11 @@ import bookmark from '../images/bookmark.svg';
 import settings from '../images/settings.svg';
 import message from '../images/message.svg';
 
-const Header = ({ time }) => {
+const Header = () => {
+  const [time, setTime] = React.useState();
+  setInterval(function () {
+    setTime(new Date().toLocaleTimeString());
+  }, 1000);
   return (
     <div className='header'>
       <div className='header_profile'>

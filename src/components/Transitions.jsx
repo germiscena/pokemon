@@ -1,15 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import './Transitions.scss';
 
-const Transitions = () => {
-  const transitionLinks = ['Академия тренеров', 'Покецентр', 'Дикий лес'];
+const Transitions = ({ links }) => {
+  const navigate = useNavigate();
+  console.log(links);
   return (
     <div className='transitions'>
       <h1 className='transitions_title'>Доступные переходы</h1>
       <div className='transitions_links'>
-        {transitionLinks.map((item) => {
+        {links.map((item) => {
           return (
-            <button key={item} className='transitions_links_link'>
+            <button
+              onClick={() => navigate('/' + item)}
+              key={item}
+              className='transitions_links_link'>
               {item}
             </button>
           );
