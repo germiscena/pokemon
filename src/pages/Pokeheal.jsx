@@ -8,7 +8,7 @@ import Characters from '../components/Characters';
 import BottomButtons from '../components/BottomButtons';
 import Pokedex from '../components/Pokedex';
 
-const Pokeheal = ({ openPokedex, setOpenPokedex }) => {
+const Pokeheal = ({ openPokedex, setOpenPokedex, setClosePokedex }) => {
   return (
     <div className='pokeheal'>
       <Header />
@@ -18,7 +18,7 @@ const Pokeheal = ({ openPokedex, setOpenPokedex }) => {
         <Characters />
       </div>
       <BottomButtons setOpen={() => setOpenPokedex(true)} />
-      {openPokedex && <Pokedex setOpen={() => setOpenPokedex(false)} />}
+      {openPokedex && <Pokedex setOpen={() => setClosePokedex(false)} />}
     </div>
   );
 };
