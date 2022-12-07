@@ -8,7 +8,7 @@ import Field from '../components/Field';
 import welcomeField from '../images/welcomeField.jpg';
 import Characters from '../components/Characters';
 
-const Welcome = ({ openPokedex, setOpenPokedex, setClosePokedex }) => {
+const Welcome = ({ openPokedex, setOpenPokedex, setClosePokedex, pokemons }) => {
   return (
     <div className='welcome'>
       <Header />
@@ -18,7 +18,7 @@ const Welcome = ({ openPokedex, setOpenPokedex, setClosePokedex }) => {
         <Characters />
       </div>
       <BottomButtons setOpen={() => setOpenPokedex(true)} />
-      {openPokedex && <Pokedex setOpen={() => setClosePokedex(false)} />}
+      {openPokedex && <Pokedex pokemons={pokemons} setOpen={() => setClosePokedex(false)} />}
     </div>
   );
 };

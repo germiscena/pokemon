@@ -1,0 +1,10 @@
+export { default as Bulbasaur } from './bulbasaur.png';
+export { default as Ivysaur } from './ivisaur.png';
+export { default as Venusaur } from './venusaur.png';
+export { default as Charmander } from './charmander.png';
+export { default as Charmeleon } from './charmeleon.png';
+export { default as Charizard } from './charizard.png';
+export { default as Squirtle } from './squirtle.png';
+export { default as Wartortle } from './wartortle.jpeg';
+export { default as Blastoise } from './blastoise.png';
+export { default as Caterpie } from './caterpie.png';

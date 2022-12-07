@@ -8,7 +8,7 @@ import Transitions from '../components/Transitions';
 import battleField from '../images/field.png';
 import './BattlePage.scss';
 
-const BattlePage = ({ openPokedex, setOpenPokedex, setClosePokedex }) => {
+const BattlePage = ({ openPokedex, setOpenPokedex, setClosePokedex, pokemons }) => {
   const [isHealing, setIsHealing] = React.useState(false);
   function healing() {
     setIsHealing(true);
@@ -25,7 +25,7 @@ const BattlePage = ({ openPokedex, setOpenPokedex, setClosePokedex }) => {
         <Characters isHealing={isHealing} healing={() => healing()} />
       </div>
       <BottomButtons setOpen={() => setOpenPokedex()} />
-      {openPokedex && <Pokedex setOpen={() => setClosePokedex()} />}
+      {openPokedex && <Pokedex pokemons={pokemons} setOpen={() => setClosePokedex()} />}
     </div>
   );
 };

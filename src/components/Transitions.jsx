@@ -1,11 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { Link } from 'react-router-dom';
 import './Transitions.scss';
 
 const Transitions = ({ links }) => {
   const navigate = useNavigate();
-  console.log(links);
   return (
     <div className='transitions'>
       <h1 className='transitions_title'>Доступные переходы</h1>

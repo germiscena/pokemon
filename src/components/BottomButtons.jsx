@@ -1,6 +1,6 @@
 import React from 'react';
 import './BottomButtons.scss';
-const BottomButtons = ({ setOpen }) => {
+const BottomButtons = ({ setOpen, setClose, openPokedex }) => {
   const [isActive, setIsActive] = React.useState(false);
   return (
     <div className='bottomButtons'>
@@ -9,7 +9,9 @@ const BottomButtons = ({ setOpen }) => {
         className={isActive ? 'bottomButtons_button active' : 'bottomButtons_button'}>
         Дикие покемоны
       </button>
-      <button onClick={() => setOpen()} className='bottomButtons_button'>
+      <button
+        onClick={openPokedex ? () => setClose() : () => setOpen()}
+        className='bottomButtons_button'>
         Покедекс
       </button>
       <button className='bottomButtons_button'>Бои</button>
